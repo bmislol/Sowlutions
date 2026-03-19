@@ -19,11 +19,25 @@ public class Main {
 
                 int index = 0;
 
+                String keySt = "aaa";
+
                 for(String word : words){
                     // 97-122 all ascii from a-z
                     
                     int nb = Integer.parseInt(word);
                     char c = (char)nb;
+                    
+                    int key = 0;
+
+                    for(char keyC : keySt.toCharArray()){
+                        key += keyC;
+                    }
+
+                    while(!(c > 97 && c < 122)){
+                        c ^= key;
+
+                        key++;
+                    }
 
                     System.out.println("nb: " + nb);
                     System.out.println("char: " + c);
