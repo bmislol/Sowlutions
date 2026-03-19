@@ -5,7 +5,9 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 
-df = pandas.read_csv('prediction.csv')
+df = pd.read_csv()
+
+print(df)
 
 
 X_train, X_test, y_train, y_test = train_test_split(
