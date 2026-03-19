@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();
+
         File file = new File("p059_cipher.txt");
     
         try (Scanner myReader = new Scanner(file)) {
@@ -19,17 +21,19 @@ public class Main {
 
                 for(String word : words){
                     // 97-122 all ascii from a-z
-
-                    String test = 
                     
                     int nb = Integer.parseInt(word);
+                    char c = (char)nb;
 
-
+                    System.out.println("nb: " + nb);
+                    System.out.println("char: " + c);
                 }
             }
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+
+        System.out.println(sb.toString());
     }
 }
