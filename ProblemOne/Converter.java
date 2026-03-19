@@ -25,6 +25,8 @@ class Converter{
         String[] words = splitWord(str);
 
         for(String word: words){
+            word = word.toLowerCase();
+
             sb.append(word.substring(0,1).toUpperCase() + word.substring(1));
         }
 
@@ -37,9 +39,11 @@ class Converter{
         String[] words = splitWord(str);
 
         for(String word: words){
+            word = word.toLowerCase();
+
             sb.append(word);
 
-            if(index < words.length){
+            if(index < words.length - 1){
                 sb.append("-");
 
                 index++;
@@ -59,8 +63,15 @@ class Converter{
         String[] words = splitWord(str);
 
         for(String word: words){
+            word = word.toLowerCase();
+
             sb.append(word);
-            sb.append("_");
+
+            if(index < words.length - 1){
+                sb.append("_");
+
+                index++;
+            }
         }
 
         return sb.toString();
@@ -72,13 +83,16 @@ class Converter{
         String[] words = splitWord(str);
 
         for(String word: words){
-            sb.append(word);
-            
-            if(index < words.length){
-                sb.append("_");
+            word = word.toLowerCase();
 
-                index++;
+            if(index == 0){
+                sb.append(word);
             }
+            else{
+                sb.append(word.substring(0,1).toUpperCase() + word.substring(1));
+            }
+
+            ++index;
         }
 
         return sb.toString();
