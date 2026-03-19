@@ -21,22 +21,34 @@ public class Main {
 
                 String keySt = "aaa";
 
-                for(String word : words){
+                for(int i = 0; i < words.length; i++){
                     // 97-122 all ascii from a-z
-                    
-                    int nb = Integer.parseInt(word);
-                    char c = (char)nb;
-                    
                     int key = 0;
 
-                    for(char keyC : keySt.toCharArray()){
-                        key += keyC;
+                    for(char temp : keySt.toCharArray()){
+                        key += temp;
                     }
 
-                    while(!(c > 97 && c < 122)){
-                        c ^= key;
+                    String word = words[i];
+                    
+                    int nb = Integer.parseInt(word);
+                    char c = (char)nb; 
 
-                        key++;
+                    char test = c ^ key;
+
+                    if(test < 97 || test > 122){
+                        while(c < 97 || c > 122){
+                            key++;
+                            
+                            test = c ^ key;
+                        }
+
+                        i = 0;
+
+                        sb = new StringBuilder();
+                    }
+                    else{
+                        sb.append(test);
                     }
 
                     System.out.println("nb: " + nb);
