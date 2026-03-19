@@ -7,7 +7,5 @@ import pickle
 
 games = pd.read_csv('/ProblemTwo/prediction.csv')
 
-num_games_with_spades = (games['Card Suit'] == 'Spades').sum()
-total_games = len(games)
 
-print('games as spade = {}'.format(num_games_with_spades / total_games))
+# i would make a function that takes first argument, goub by all the relatives, and then check if the second argument matches, if yes the third and ghive an outpute based on that
