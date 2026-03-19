@@ -1,5 +1,7 @@
 class Main{
     public static void main(String[] args){
-        System.out.println("test");
+        Converter conv = new Converter();
+
+        System.out.println(conv.toPascalCase("hello_world"));
     }
 }
